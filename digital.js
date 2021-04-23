@@ -28,7 +28,7 @@ function clock() {
     startingHours = "0" + startingDate.getHours();
     meridiem.innerHTML = "AM";
   } else if (adjustHour > 12) {
-    startingHours = "0" + (adjustHour - 12);
+    startingHours = "0" + (startingDate.getHours() - 12);
     meridiem.innerHTML = "PM";
   }
   if (adjustSeconds < 10) {
