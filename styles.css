@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.index-body {
+  background-color: #00b4d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.greetingmsg {
+  color: aliceblue;
+  text-align: center;
+}
+
+.greetingmsg h1 {
+  margin-bottom: 80px;
+}
+
+/* Classic clock page css */
+
+.classic-body {
+  background: linear-gradient(to right, #2077db, #1bb4a0);
+  font-family: "Gotham Rounded", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.cl-clock {
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.cl-clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+.cl-clock .number1 {
+  --rotation: 30deg;
+}
+.cl-clock .number2 {
+  --rotation: 60deg;
+}
+.cl-clock .number3 {
+  --rotation: 90deg;
+}
+.cl-clock .number4 {
+  --rotation: 120deg;
+}
+.cl-clock .number5 {
+  --rotation: 150deg;
+}
+.cl-clock .number6 {
+  --rotation: 180deg;
+}
+.cl-clock .number7 {
+  --rotation: 210deg;
+}
+.cl-clock .number8 {
+  --rotation: 240deg;
+}
+.cl-clock .number9 {
+  --rotation: 270deg;
+}
+.cl-clock .number10 {
+  --rotation: 300deg;
+}
+.cl-clock .number11 {
+  --rotation: 330deg;
+}
+
+@media only screen and (max-width: 960px) {
+  .cl-clock {
+    width: 500px;
+    height: 500px;
+  }
+  .cl-clock .number {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cl-clock {
+    width: 400px;
+    height: 400px;
+  }
+  .cl-clock .number {
+    font-size: 1.5rem;
+  }
+}
+
+.cl-clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: black;
+  z-index: 10;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.cl-clock::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(117, 5, 43);
+  z-index: 11;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.cl-clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: red;
+}
+
+.cl-clock .hand.minute {
+  width: 7px;
+  height: 40%;
+  background-color: black;
+}
+
+.cl-clock .hand.hour {
+  width: 10px;
+  height: 30%;
+  background-color: black;
+}
+
+/* digital clock page css */
+
+.digital-body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.digital-clock {
+  height: 40%;
+  width: 80%;
+  border: 1px solid rgb(255, 255, 255, 0.6);
+  border-radius: 8px;
+  color: rgb(36, 255, 36);
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+}
+
+.date {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.6);
+  display: flex;
+  width: 100%;
+  padding-left: 3vw;
+  font-size: 3vw;
+  color: #38b000;
+  justify-content: flex start;
+}
+
+.digits {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.6);
+  display: flex;
+  width: 100%;
+  height: 50%;
+  font-size: 7vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.digital-day {
+  /* border: 1px solid white; */
+  display: flex;
+  width: 100%;
+  font-size: 3vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.day {
+  color: rgb(14, 44, 10);
+}
+
+.active {
+  color: rgb(36, 255, 36);
+}
