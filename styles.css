@@ -88,8 +88,8 @@
 
 @media only screen and (max-width: 960px) {
   .cl-clock {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
   }
   .cl-clock .number {
     font-size: 2rem;
@@ -98,8 +98,8 @@
 
 @media only screen and (max-width: 600px) {
   .cl-clock {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
   .cl-clock .number {
     font-size: 1.5rem;
