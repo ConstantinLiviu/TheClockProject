@@ -18,27 +18,35 @@ function clock() {
   const dayOfMonth = startingDate.getDate();
   const today = startingDate.getDay();
   const month = startingDate.getMonth() + 1;
-  let startingSeconds = startingDate.getSeconds();
-  let startingMinutes = startingDate.getMinutes();
-  let startingHours = startingDate.getHours();
-  let adjustHour = Number(startingHours);
-  let adjustSeconds = Number(startingSeconds);
-  let adjustMinutes = Number(startingMinutes);
-  if (adjustHour < 10) {
+  let startingSeconds = startingDate.getSeconds().toString();
+  let startingMinutes = startingDate.getMinutes().toString();
+  let startingHours = startingDate.getHours().toString();
+
+  if (startingHours.length <2) {
     startingHours = "0" + startingDate.getHours();
-    meridiem.innerHTML = "AM";
-  } else if (adjustHour > 12) {
-    startingHours = "0" + (startingDate.getHours() - 12);
-    meridiem.innerHTML = "PM";
   }
-  if (adjustSeconds < 10) {
+    if (startingSeconds.length < 2) {
     startingSeconds = "0" + startingDate.getSeconds();
   }
-  if (adjustMinutes < 10) {
+  if (startingMinutes.length < 2) {
     startingMinutes = "0" + startingDate.getMinutes();
+  }
+  if (startingHours>12&&startingHours<22) {
+    startingHours = "0" + (startingDate.getHours().toString() - 12);
+    meridiem.innerHTML = "PM";
+  } else if (startingHours>=22) {
+    startingHours = startingDate.getHours().toString() - 12;
+    meridiem.innerHTML = "PM";
+  } else {
+    meridiem.innerHTML = "AM";
   }
 
   dayOfWeek[today].classList.add("active");
+  if (dayOfWeek[today] == dayOfWeek[0]) {
+    dayOfWeek[dayOfWeek.length-1].classList.remove("active");
+  } else {
+    dayOfWeek[today-1].classList.remove("active");
+  }
   editTime(firstHourDigit, startingHours);
   editTime(firstMinuteDigit, startingMinutes);
   editTime(firstSecondsDigit, startingSeconds);
