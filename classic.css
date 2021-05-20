@@ -1,0 +1,104 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, rgba(0, 233, 202, 0.918), rgb(3, 154, 192));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock{
+    border: 2px solid black;
+    width: 80vmin;
+    height: 80vmin;
+    background-color: rgba(255,255,255,.6);
+    border-radius: 50%;
+    position: relative;
+    
+}
+
+.clock .number {
+    --rotation:0deg;
+    font-family:'Pattaya', sans-serif;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 8vmin;
+}
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+.clock .number12{--rotation: 360deg;}
+
+.adjust1{transform: rotate(-30deg);}
+.adjust2{transform: rotate(-60deg);}
+.adjust3{transform: rotate(-90deg);}
+.adjust4{transform: rotate(-120deg);}
+.adjust5{transform: rotate(-150deg);}
+.adjust6{transform: rotate(-180deg);}
+.adjust7{transform: rotate(-210deg);}
+.adjust8{transform: rotate(-240deg);}
+.adjust9{transform: rotate(-270deg);}
+.adjust10{transform: rotate(-300deg);}
+.adjust11{transform: rotate(-330deg);}
+.adjust12{transform: rotate(-360deg);}
+
+.clock .hand {
+    /* border: 1px solid red; */
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 1.5vmin;
+    height: 25vmin;
+    background-color: black;
+    border-top-left-radius: 10vmin;
+    border-top-right-radius: 10vmin;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(117, 5, 43);
+    z-index: 11;
+    width: 2vmin;
+    height: 2vmin;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second {
+    width: 0.5vmin;
+    height: 35vmin;
+    background-color: rgb(187, 15, 15);
+}
+
+.clock .hand.minute {
+    width: 1vmin;
+    height: 30vmin;
+}
+
+.clock .hand.hour {
+    width: 1.5vmin;
+    height: 25vmin;
+}
